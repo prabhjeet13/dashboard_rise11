@@ -46,7 +46,7 @@ const DashRight = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
   return (
      <div className='flex-col gap-2 w-[11/12] items-center'>
-            <div className='flex items-center m-2 p-3'>
+            <div className='xlg:flex xlg:items-center m-2 p-3 md:flex md:flex-wrap sm:grid sm:grid-cols-3 sm:grid-rows-2 xsm:grid xsm:grid-cols-2 xsm:grid-rows-2'>
                  {
                     record.map((rec) => {
                         return (
@@ -71,7 +71,7 @@ const DashRight = () => {
                                       </div> )
                                     }
                                     { rec.No >= 4 && (<div className='flex gap-1 items-center'>
-                                        <div className='rounded-full w-5 h-5'>
+                                        <div className='rounded-full w-5 h-5 border-2 border-blue-400'>
                                         </div>
                                         {
                                             rec.No >= 4 && rec.No <= 6 && (<div className='w-20  h-[0.1em]  bg-gray-400'>
@@ -94,7 +94,7 @@ const DashRight = () => {
                     <p className='font-mono text-lg font-bold'>File your Claim.</p> <span className='font-mono text-sm font-bold text-opacity-55 text-gray-500'>(Approx 5 Minutes)</span>
                 </div>
                 <hr/>
-                <div className='flex gap-5 mb-2'>
+                <div className='lg:flex lg:gap-5 mb-2 md:grid md:grid-cols-2 md:rows-2'>
                     <div>
                         <div className='flex gap-1 items-center p-2 mt-2 ml-2'>
                             <SlCalculator className='text-3xl text-blue-400 ' />
@@ -103,7 +103,7 @@ const DashRight = () => {
                         <div>
                             <div className='flex-col gap-1 p-2 ml-5 mb-1'>
                                 <label className='font-bold font-mono text-sm text-gray-400'>Contract Value</label>
-                                <div className='flex gap-1 items-center'>
+                                <div className='sm:flex sm:gap-3 sm:items-center xsm:grid xsm:grid-cols-1 xsm:grid-rows-2 xsm:gap-2'>
                                     <input className='border-2 bg-gray-200 rounded-md text-gray-600'/> 
                                     <select className='border-2 border-gray-500'>
                                         <option>USD</option>
@@ -111,9 +111,9 @@ const DashRight = () => {
                                     </select>
                                 </div>
                             </div>
-                            <div className='flex-col gap-1 p-2 ml-5 mb-1'>
+                            <div className='flex-col gap-2 p-2 ml-5 mb-1'>
                                 <label className='font-bold font-mono text-sm text-gray-400'>Claim Value</label>
-                                <div className='flex gap-1 items-center'>
+                                <div className='sm:flex sm:gap-3 sm:items-center xsm:grid xsm:grid-cols-1 xsm:grid-rows-2 xsm:gap-2'>
                                     <input className='border-2 bg-gray-200 rounded-md text-gray-600'/> 
                                     <select className='border-2 border-gray-500'>
                                         <option>USD</option>
@@ -131,7 +131,7 @@ const DashRight = () => {
                     </div>    
                 </div>
                 <hr/>
-                <div className='flex justify-evenly gap-5'>
+                <div className='md:flex md:justify-evenly gap-5 mt-3 sm:grid sm:grid-rows-3 sm:grid-cols-2'>
                     <div>
                         <div className='flex gap-1 items-center'>
                             <p><LuScrollText className='text-3xl text-blue-400'/></p>
@@ -161,37 +161,37 @@ const DashRight = () => {
                             <p><TbNotes className='text-3xl text-blue-400'/></p>
                             <p className='font-bold font-mono text-xl text-gray-700'>Aggrement under Disputes</p>
                         </div>
-                        <div className='flex gap-1'>
-                        <div
-                        {...getRootProps()}
-                        className="border-2 border-dashed border-gray-400 p-7 m-2 rounded-md text-center cursor-pointer hover:border-blue-500 w-fit bg-blue-100"
-                        >
-                        <input {...getInputProps()} />
-                        {isDragActive ? (
-                            <p className="text-blue-500">Drop the files here...</p>
-                        ) : (
-                            <div className='w-fit my-2'>
-                            <MdCloudUpload className='text-4xl text-blue-600 text-center align-middle mx-auto'/>
-                             <p className='text-xs font-mono font-semibold text-gray-500'> Upload the Contract</p>
-                             <p className='text-xs font-mono font-bold text-blue-500'>Max 2MB PDF</p>
+                        <div className='md:flex gap-1 sm:grid-rows-2 sm:grid sm:grid-cols-1'>
+                            <div
+                            {...getRootProps()}
+                            className="border-2 border-dashed border-gray-400 p-7 m-2 rounded-md text-center cursor-pointer hover:border-blue-500 w-fit bg-blue-100"
+                            >
+                            <input {...getInputProps()} />
+                            {isDragActive ? (
+                                <p className="text-blue-500">Drop the files here...</p>
+                            ) : (
+                                <div className='w-fit my-2'>
+                                <MdCloudUpload className='text-4xl text-blue-600 text-center align-middle mx-auto'/>
+                                <p className='text-xs font-mono font-semibold text-gray-500'> Upload the Contract</p>
+                                <p className='text-xs font-mono font-bold text-blue-500'>Max 2MB PDF</p>
+                                </div>
+                            )}
                             </div>
-                        )}
-                        </div>
-                        <div
-                        {...getRootProps()}
-                        className="border-2 border-dashed border-gray-400 p-7 m-2 rounded-md text-center cursor-pointer hover:border-blue-500 w-fit bg-blue-100 h-fit"
-                        >
-                        <input {...getInputProps()} />
-                        {isDragActive ? (
-                            <p className="text-blue-500">Drop the files here...</p>
-                        ) : (
-                            <div className='w-fit'>
-                            <MdCloudUpload className='text-4xl text-blue-600 text-center align-middle mx-auto'/>
-                             <p className='text-xs font-mono font-semibold text-gray-500'> Upload the Contract</p>
-                             <p className='textxs font-mono font-bold text-blue-500'>Max 2MB PDF</p>
+                            <div
+                            {...getRootProps()}
+                            className="border-2 border-dashed border-gray-400 p-7 m-2 rounded-md text-center cursor-pointer hover:border-blue-500 w-fit bg-blue-100 h-fit"
+                            >
+                            <input {...getInputProps()} />
+                            {isDragActive ? (
+                                <p className="text-blue-500">Drop the files here...</p>
+                            ) : (
+                                <div className='w-fit'>
+                                <MdCloudUpload className='text-4xl text-blue-600 text-center align-middle mx-auto'/>
+                                <p className='text-xs font-mono font-semibold text-gray-500'> Upload the Contract</p>
+                                <p className='textxs font-mono font-bold text-blue-500'>Max 2MB PDF</p>
+                                </div>
+                            )}
                             </div>
-                        )}
-                        </div>
                         </div>
                     </div>
                     <div>

@@ -4,10 +4,13 @@ module.exports = {
   theme: {
     extend: {
       screens : {
-        mobile : "480px",
-        tablet : "768px",
-        desktop : "1024px"
-      }
+        xsm: "408px",
+        sm : "579px",
+        md : "768px",
+        lg : "1024px",
+        xlg : "1210px",
+        sidebar : "625px",
+      },
     },
   },
   plugins: [],
